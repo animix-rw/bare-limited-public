@@ -8,8 +8,11 @@ name: Download File on 30min
 
 on:
   schedule:
-   #- cron: '0,30 1-14 * * 1-6'  # Runs every 30 minutes from 1 AM to 2:30 PM UTC, Monday to Saturday, 9-11 HK time
-    - cron: '30 1-15 * * 1-6' 
+    # Hong Kong time (UTC+8): Monday–Saturday, 10:00–21:30 every 30 minutes
+    - cron: '0,30 2-13 * * 0-5'
+    # Final run at 22:00 Hong Kong time
+    - cron: '0 14 * * 0-5'
+    
 
 
 

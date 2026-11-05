@@ -7,7 +7,7 @@ name: Download File on Monthly
 
 on:
   schedule:
-    - cron: '0 14 1 * *'  # Runs 1st every month at 10PM HK time
+    - cron: '0 14 1 * *'  # 
 
 
 
