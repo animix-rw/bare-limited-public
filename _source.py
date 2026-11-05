@@ -60,24 +60,14 @@ absolute_path = os.path.dirname(os.path.abspath("__file__"))
 # Google Sheets Creds
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+creds_dict = json.loads(os.environ["_GOOGLE_CRED"])
 creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
 
 
-
-# Read passkey.ini
-#import configparser
-#config = configparser.ConfigParser()
-#config.read('passkey.ini')
-
-#__URL = config['credentials']['_URL']
-#__USERNAME = config['credentials']['_USERNAME']
-#__PASSWORD = config['credentials']['_PASSWORD']
-
-
-__URL = os.getenv('_URL')
-__USERNAME = os.environ.get('_USERNAME')
-__PASSWORD = os.environ.get('_PASSWORDL')
+__URL = os.environ['_URL']
+__USERNAME = os.environ['_USERNAME']
+__PASSWORD = os.environ['_PASSWORD']
 
 
 
@@ -97,7 +87,7 @@ def report_download(report_name, google_sheet_name, date_from=None):
     driver = webdriver.Chrome(service=service, options=options)
     enable_download_headless(driver, "excel")
 
-    driver.get("__URL")
+    driver.get(__URL)
     driver.switch_to.frame("mainFrame");
     driver.switch_to.frame("SYSTEM");
 
