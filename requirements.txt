@@ -1,0 +1,5 @@
+#ipykernel
+selenium
+pandas
+gspread
+oauth2client
