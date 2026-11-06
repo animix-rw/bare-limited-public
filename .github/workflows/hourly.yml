@@ -12,6 +12,7 @@ on:
     - cron: '7,37 * * * *'
     # Final run at 22:00 Hong Kong time
     #- cron: '0 14 * * 0-6'
+  workflow_dispatch: 
     
 
 
