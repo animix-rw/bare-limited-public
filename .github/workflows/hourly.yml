@@ -9,9 +9,9 @@ name: Download File on 30min
 on:
   schedule:
     # Hong Kong time (UTC+8): Monday–Saturday, 10:00–21:30 every 30 minutes
-    - cron: '7,37 2-13 * * 0-6'
+    - cron: '7,37 * * * *'
     # Final run at 22:00 Hong Kong time
-    - cron: '0 14 * * 0-6'
+    #- cron: '0 14 * * 0-6'
     
 
 
